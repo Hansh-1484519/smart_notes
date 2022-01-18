@@ -15,3 +15,20 @@ body{
 li{
     list-style: none;
 }
+.add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap : 5px;
+}
+.area{
+    background-color: aqua;
+    width : 300px;
+    height : 200px;
+    padding : 5px;
+    border : 2px solid rosybrown;
+    border-radius: 2px;
+    font-size: 20px;
+
+}
