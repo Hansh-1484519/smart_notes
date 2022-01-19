@@ -43,7 +43,7 @@ li{
 }
 .area{
     background-color: rgb(255, 252, 96);
-    min-width: 300px;
+    width: 280px;
     min-height: 200px;
     padding : 5px;
     border: 2px solid rgb(182, 134, 226);
