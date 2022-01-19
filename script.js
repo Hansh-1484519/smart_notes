@@ -13,6 +13,7 @@ const AddTask = () => {
 */
 const OpenNote = () =>{
     const textBox = document.createElement('textarea');
+    textBox.classList = 'textBox';
     var save = document.createElement('button');
     save.textContent = 'save';
     box.appendChild(textBox);

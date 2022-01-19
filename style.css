@@ -12,6 +12,25 @@ body{
 .container{
     margin : 20px;
 }
+button{
+    width : 200px;
+    height: 40px;
+    background-color:rgb(26, 26, 114);
+    font-size: 25px;
+    color :aliceblue;
+    border : none;
+    margin : 20px;
+}
+.textBox{
+    width : 300px;
+    height: 200px;
+    background-color: cyan;
+    border: 2px solid blueviolet;
+    border-radius: 2px;
+    text-indent: 5px;
+    padding : 5px;
+    font-size: 20px;
+}
 li{
     list-style: none;
 }
@@ -24,8 +43,8 @@ li{
 }
 .area{
     background-color: aqua;
-    width : 300px;
-    height : 200px;
+    min-width: 300px;
+    min-height: 200px;
     padding : 5px;
     border : 2px solid rosybrown;
     border-radius: 2px;
