@@ -14,29 +14,41 @@ const AddTask = () => {
 const OpenNote = () =>{
     const textBox = document.createElement('textarea');
     textBox.classList = 'textBox';
-    var save = document.createElement('button');
-    save.textContent = 'save';
+    const save = document.createElement('button');
+    save.textContent = 'SAVE';
     box.appendChild(textBox);
     box.appendChild(save);
     note.disabled = true;
 
 
     const postNote = () =>{
+        const Delete = document.createElement('button');
+        Delete.textContent = 'x';
+        Delete.classList = 'delete';
+        const Area = document.createElement('p');
         if(textBox.value){
             note.disabled = false;
             const content = textBox.value;
-           const Area = document.createElement('p');
            Area.classList = 'area';
            Area.textContent = content;
            list.appendChild(Area);
+           list.appendChild(Delete);
             box.removeChild(textBox);
             box.removeChild(save);
            // list.innerHTML = textBox.value;
         }
+
+        const deleteNote = () => {
+            list.removeChild(Area);
+            list.removeChild(Delete);
+        }
+        Delete.addEventListener('click' , deleteNote);
     }
     save.addEventListener('click' , postNote);
 }
 
 
 note.addEventListener('click', OpenNote);
-Add.addEventListener('click' , AddTask);
+//Add.addEventListener('click' , AddTask);
+
+// Update the note 
