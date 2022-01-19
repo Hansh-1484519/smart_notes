@@ -25,7 +25,7 @@ const OpenNote = () =>{
         const Delete = document.createElement('button');
         Delete.textContent = 'x';
         Delete.classList = 'delete';
-        const Area = document.createElement('p');
+        const Area = document.createElement('textarea');
         if(textBox.value){
             note.disabled = false;
             const content = textBox.value;
@@ -43,6 +43,9 @@ const OpenNote = () =>{
             list.removeChild(Delete);
         }
         Delete.addEventListener('click' , deleteNote);
+        Area.addEventListener('click' , () => {
+            
+        })
     }
     save.addEventListener('click' , postNote);
 }
