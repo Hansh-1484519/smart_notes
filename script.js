@@ -19,9 +19,14 @@ const OpenNote = () =>{
     box.appendChild(textBox);
     box.appendChild(save);
     note.disabled = true;
+    var count  = 1;
 
+    if(localStorage.getItem('count')){
+        count = Number(localStorage.getItem('count')) + 1;
+    }
 
-    const postNote = () =>{
+    const postNote = () =>{ 
+        localStorage.setItem( 'count' , count);
         const Delete = document.createElement('button');
         Delete.textContent = 'x';
         Delete.classList = 'delete';
@@ -32,6 +37,8 @@ const OpenNote = () =>{
            Area.classList = 'area';
            Area.textContent = content;
            list.appendChild(Area);
+           localStorage.setItem( count , content);
+           count++;
            list.appendChild(Delete);
             box.removeChild(textBox);
             box.removeChild(save);
@@ -54,4 +61,8 @@ const OpenNote = () =>{
 note.addEventListener('click', OpenNote);
 //Add.addEventListener('click' , AddTask);
 
-// Update the note 
+// Update the note
+
+localStorage.setItem( 'raj' , 'Person');
+const raj = localStorage.getItem( count );
+document.write(raj);
