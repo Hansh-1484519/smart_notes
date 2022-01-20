@@ -37,8 +37,9 @@ const OpenNote = () =>{
            Area.classList = 'area';
            Area.textContent = content;
            list.appendChild(Area);
+
            localStorage.setItem( count , content);
-           count++;
+
            list.appendChild(Delete);
             box.removeChild(textBox);
             box.removeChild(save);
@@ -62,7 +63,8 @@ note.addEventListener('click', OpenNote);
 //Add.addEventListener('click' , AddTask);
 
 // Update the note
+if( localStorage.getItem('1')){
+    let hello = localStorage.getItem('1');
+    document.write(hello);
+}
 
-localStorage.setItem( 'raj' , 'Person');
-const raj = localStorage.getItem( count );
-document.write(raj);
