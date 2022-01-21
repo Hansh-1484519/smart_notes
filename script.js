@@ -49,6 +49,7 @@ const OpenNote = () =>{
         const deleteNote = () => {
             list.removeChild(Area);
             list.removeChild(Delete);
+            localStorage.removeItem(count);
         }
         Delete.addEventListener('click' , deleteNote);
         Area.addEventListener('click' , () => {
@@ -62,7 +63,8 @@ const OpenNote = () =>{
 note.addEventListener('click', OpenNote);
 //Add.addEventListener('click' , AddTask);
 
-// Update the note
+// Print the locally stored previous notes;
+
 const localCount = localStorage.getItem('count');
 for( var i = 1 ; i <= localCount ; i++){
 
@@ -81,6 +83,7 @@ for( var i = 1 ; i <= localCount ; i++){
         const delete1Note = () => {
             list.removeChild(Area1);
             list.removeChild(Delete1);
+            localStorage.removeItem('1');
         }
         Delete1.addEventListener('click' , delete1Note);
         document.write(hello);
