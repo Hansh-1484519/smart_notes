@@ -63,23 +63,27 @@ note.addEventListener('click', OpenNote);
 //Add.addEventListener('click' , AddTask);
 
 // Update the note
-if( localStorage.getItem('1')){
-    let hello = localStorage.getItem('1');
-    const Delete1 = document.createElement('button');
-    const Area1 = document.createElement('textarea');
-    Area1.classList = 'area';
-    Area1.textContent = hello;
-    
-    Delete1.textContent = 'x';
-    Delete1.classList = 'delete';
-    
-    list.appendChild(Area1);
-    list.appendChild(Delete1);
-    const delete1Note = () => {
-        list.removeChild(Area1);
-        list.removeChild(Delete1);
+const localCount = localStorage.getItem('count');
+for( var i = 1 ; i <= localCount ; i++){
+
+    if( localStorage.getItem(i)){
+        let hello = localStorage.getItem(i);
+        const Delete1 = document.createElement('button');
+        const Area1 = document.createElement('textarea');
+        Area1.classList = 'area';
+        Area1.textContent = hello;
+        
+        Delete1.textContent = 'x';
+        Delete1.classList = 'delete';
+        
+        list.appendChild(Area1);
+        list.appendChild(Delete1);
+        const delete1Note = () => {
+            list.removeChild(Area1);
+            list.removeChild(Delete1);
+        }
+        Delete1.addEventListener('click' , delete1Note);
+        document.write(hello);
     }
-    Delete1.addEventListener('click' , delete1Note);
-    document.write(hello);
 }
 
