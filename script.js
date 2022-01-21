@@ -80,13 +80,19 @@ for( var i = 1 ; i <= localCount ; i++){
         
         list.appendChild(Area1);
         list.appendChild(Delete1);
+        
         const delete1Note = () => {
             list.removeChild(Area1);
             list.removeChild(Delete1);
-            localStorage.removeItem('1');
+            for( var x = 1 ; x <= localCount ; x++){
+                if( localStorage.getItem(x) === hello){
+                    localStorage.removeItem(x);
+                }
+            }
+
         }
         Delete1.addEventListener('click' , delete1Note);
-        document.write(hello);
     }
 }
+document.write("Developed by @Hansh Raj Sharma");
 
