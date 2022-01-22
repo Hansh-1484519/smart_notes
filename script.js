@@ -45,6 +45,10 @@ const OpenNote = () =>{
             box.removeChild(save);
            // list.innerHTML = textBox.value;
         }
+        Area.onchange = function(){
+            const newContent = Area.value;
+            localStorage.setItem( count , newContent );
+        }
 
         const deleteNote = () => {
             list.removeChild(Area);
@@ -80,6 +84,15 @@ for( var i = 1 ; i <= localCount ; i++){
         
         list.appendChild(Area1);
         list.appendChild(Delete1);
+
+        Area1.onchange = function(){
+            for( var x = 1 ; x <= localCount ; x++){
+                if( localStorage.getItem(x) === hello){
+                    hello = Area1.value;
+                    localStorage.setItem(x , hello);
+                }
+            }
+        }
         
         const delete1Note = () => {
             list.removeChild(Area1);
